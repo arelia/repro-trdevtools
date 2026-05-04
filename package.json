@@ -1,16 +1,28 @@
 {
-  "name": "repro-trdevtools",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "repro-trdevtools-ssr",
+  "version": "0.0.1",
+  "description": "Reproducer for @tanstack/react-router-devtools SSR crash bug",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "start-server",
+    "build": "start-build",
+    "start": "start-server --open",
+    "start:prod": "NODE_ENV=production node dist/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@tanstack/router-devtools-core": "^1.167.3"
+    "@tanstack/react-router": "^1.168.22",
+    "@tanstack/react-router-devtools": "^1.166.13",
+    "@tanstack/react-start": "^1.167.40",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tanstack/router-cli": "^1.168.22",
+    "@tanstack/start": "^1.167.40",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^8.0.0"
   }
 }
