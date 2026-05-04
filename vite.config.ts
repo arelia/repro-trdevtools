@@ -7,6 +7,7 @@ export default defineConfig({
     tanstackStart({
       router: {
         virtualRouteConfig: "./routes.tsx",
+        routesDir: "./src/routes",
       },
     }),
     react({
