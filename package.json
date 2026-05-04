@@ -4,10 +4,9 @@
   "description": "Reproducer for @tanstack/react-router-devtools SSR crash bug",
   "type": "module",
   "scripts": {
-    "dev": "start-server",
-    "build": "start-build",
-    "start": "start-server --open",
-    "start:prod": "NODE_ENV=production node dist/server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.169.1",
