@@ -1,11 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { TanStackStartVite } from "@tanstack/start/vite";
-import { fileURLToPath } from "node:url";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
   plugins: [
-    TanStackStartVite({}),
+    tanstackStart({
+      router: {
+        virtualRouteConfig: "./routes.tsx",
+      },
+    }),
     react({
       jsxRuntime: "automatic",
     }),
@@ -13,10 +16,5 @@ export default defineConfig({
   ssr: {
     // DevTools package included in SSR bundle which triggers delegateEvents() bug
     noExternal: ["@tanstack/react-router-devtools"],
-  },
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
   },
 });
